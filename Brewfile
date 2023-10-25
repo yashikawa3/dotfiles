@@ -1,0 +1,20 @@
+# packages
+brew 'cask'
+brew 'ffmpeg'
+brew 'fish'
+brew 'git'
+brew 'wget'
+
+# cask
+cask 'aerial'
+cask 'alfred'
+cask 'deepl'
+cask 'google-japanese-ime'
+cask 'gyazo'
+cask 'iterm2'
+cask 'notion'
+cask 'phpstorm'
+cask 'sequel-pro'
+cask 'slack'
+cask 'sublime-text'
+cask 'zoom'
