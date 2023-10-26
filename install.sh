@@ -26,7 +26,7 @@ echo "Installation from Brewfile complete."
 
 # Install fisher using fish shell
 fish -c "
-if not command -sq fisher
+if not functions -q fisher
     echo 'Installing Fisher...'
     curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
     echo 'Fisher installed successfully.'
@@ -36,6 +36,13 @@ echo 'Installing Dracula theme for Fish...'
 fisher install dracula/fish
 echo 'Dracula theme installed successfully.'
 "
+# Install vim-jetpack if not already installed
+if [ ! -f ~/.vim/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim ]; then
+    echo "Installing vim-jetpack..."
+    curl -fLo ~/.vim/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim --create-dirs https://raw.githubusercontent.com/tani/vim-jetpack/master/plugin/jetpack.vim
+else
+    echo "vim-jetpack is already installed."
+fi
 
 # Linking dotfiles to the home directory
 echo "Linking main dotfiles to the home directory..."
@@ -52,7 +59,7 @@ echo "Main dotfiles linked."
 
 # Linking specific files within .config and other directories
 echo "Linking specific files and directories..."
-ln -snv "$DOTPATH/.config/fish/config.fish" "$HOME/.config/fish/config.fish"
+ln -snvf "$DOTPATH/.config/fish/config.fish" "$HOME/.config/fish/config.fish"
 # Add other specific links as needed in the future
 echo "Specific files and directories linked successfully."
 

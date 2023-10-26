@@ -3,6 +3,7 @@ brew 'cask'
 brew 'ffmpeg'
 brew 'fish'
 brew 'git'
+brew 'vim'
 brew 'wget'
 
 # cask
