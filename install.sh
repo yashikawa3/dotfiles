@@ -24,18 +24,37 @@ echo "Installing packages and applications from Brewfile..."
 brew bundle
 echo "Installation from Brewfile complete."
 
+# Install fisher using fish shell
+fish -c "
+if not command -sq fisher
+    echo 'Installing Fisher...'
+    curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+    echo 'Fisher installed successfully.'
+end
+
+echo 'Installing Dracula theme for Fish...'
+fisher install dracula/fish
+echo 'Dracula theme installed successfully.'
+"
+
 # Linking dotfiles to the home directory
-echo "Linking dotfiles to home directory..."
+echo "Linking main dotfiles to the home directory..."
 for f in .??*
 do
     [[ "$f" == ".git" ]] && continue
     [[ "$f" == ".gitmodules" ]] && continue
     [[ "$f" == ".gitignore" ]] && continue
     [[ "$f" == ".DS_Store" ]] && continue
+    [[ "$f" == ".config" ]] && continue
     ln -snv "$DOTPATH/$f" "$HOME/$f"
 done
-echo "Dotfiles linked successfully."
+echo "Main dotfiles linked."
 
+# Linking specific files within .config and other directories
+echo "Linking specific files and directories..."
+ln -snv "$DOTPATH/.config/fish/config.fish" "$HOME/.config/fish/config.fish"
+# Add other specific links as needed in the future
+echo "Specific files and directories linked successfully."
 
 # Completion message for the installation script
 echo "Dotfiles installation complete."
