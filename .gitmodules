@@ -1,0 +1,6 @@
+[submodule "iterm"]
+	path = iterm
+	url = https://github.com/dracula/iterm.git
+[submodule "wallpaper"]
+	path = wallpaper
+	url = https://github.com/dracula/wallpaper.git
