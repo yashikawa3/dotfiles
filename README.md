@@ -15,6 +15,19 @@
    ./install.sh
    ```
 
+## Changing the Log-in Shell
+
+For this dotfiles setup, I recommend using the `fish` shell. If you haven't set `fish` as your default login shell yet, you can follow these steps to change it:
+
+1. Append the output path from the previous command to /etc/shells. This requires administrator permissions:
+   ```bash
+   echo "/opt/homebrew/bin/fish" | sudo tee -a /etc/shells
+   ```
+2. Change your login shell to `fish`:
+   ```bash
+   chsh -s /path/to/fish
+   ```
+
 ## Dracula Theme for iTerm and Wallpaper Setup
 
 1. Setting up Dracula Theme for iTerm.  
