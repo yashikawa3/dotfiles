@@ -16,8 +16,8 @@
 
 ## Dracula Theme for iTerm and Wallpaper Setup
 
-1. Setting up Dracula Theme for iTerm.
+1. Setting up Dracula Theme for iTerm.  
    Open iTerm, navigate to Preferences > Profiles > Text > Color Presets... and import the theme file you downloaded.
 
-2. Setting up Dracula Wallpaper
+2. Setting up Dracula Wallpaper.  
    Use the images from the wallpaper directory to set your desired wallpaper.
