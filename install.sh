@@ -4,6 +4,10 @@ DOTPATH=~/dotfiles
 # Starting installation message
 echo "Beginning dotfiles installation..."
 
+# Update submodules
+echo "Updating submodules..."
+git submodule update --init --recursive
+
 # Check if Homebrew is installed and install if not
 if ! command -v brew &>/dev/null; then
     echo "Homebrew not found. Installing Homebrew..."
