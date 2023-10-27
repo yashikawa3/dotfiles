@@ -338,6 +338,12 @@
         "options": {
           "full_name": "zoom"
         }
+      },
+      "save-hollywood": {
+        "version": "2.5",
+        "options": {
+          "full_name": "save-hollywood"
+        }
       }
     }
   },
